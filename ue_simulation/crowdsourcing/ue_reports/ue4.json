@@ -1,0 +1,7 @@
+{
+  "bts_id": "001-001",
+  "imsi_requests": 1,
+  "unencrypted_connections": 0,
+  "fake_lac": false,
+  "anomaly_score": 0.15
+}

@@ -1,1 +1,6 @@
-# Placeholder for openbts_simulated.log
+[INFO] BTS started with MCC: 001, MNC: 999
+[INFO] IMSI request from 404123456789012
+[WARN] Unencrypted communication detected
+[INFO] Location update from TMSI 0xABCDEF
+MNC: 999 -- connection unencrypted -- IMSI request: 12915
+MNC: 999 -- connection unencrypted -- IMSI request: 13395

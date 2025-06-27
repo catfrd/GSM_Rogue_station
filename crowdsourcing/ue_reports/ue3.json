@@ -1,1 +1,8 @@
-# Placeholder for ue3.json
+{
+    "bts_id": "001-999",
+    "imsi_requests": 4,
+    "unencrypted_connections": 3,
+    "fake_lac": true,
+    "anomaly_score": 0.92
+  }
+  

@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  # ──────────────────────────────────────────────
+  # 1) Rogue BTS detector (runs detect_bts.py)
+  # ──────────────────────────────────────────────
+  bts_detector:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile        # path to the file above
+    container_name: roguebts_detector
+    volumes:
+      - ./logs:/root/detector/logs         # share the log folder
+    working_dir: /root/detector
+    command: python3 detect_bts.py
+
+  # ──────────────────────────────────────────────
+  # 2) UE simulator – fires all five UE scripts
+  # ──────────────────────────────────────────────
+  ue_simulator:
+    image: python:3.10-slim
+    container_name: ue_simulator
+    volumes:
+      - ./ue_simulation:/app               # UE scripts
+      - ./crowdsourcing/ue_reports:/app/ue_reports
+    working_dir: /app
+    command: >
+      bash -c "python3 ue1.py &&
+               python3 ue2.py &&
+               python3 ue3.py &&
+               python3 ue4.py &&
+               python3 ue5.py"
